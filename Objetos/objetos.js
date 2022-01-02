@@ -32,4 +32,52 @@ console.log(producto)
 const { informacion: { medidas}} = producto;
 
 console.log(medidas)
+ // Congelar un objeto
+
+ Object.freeze(producto);
+
+ console.log(Object.isFrozen(producto))
+
+
+const user = {
+    nombre: "Enoc",
+    apellido: "Pineda"
+}
+// Se pueder modifcar los valores de las propiedades
+Object.seal(user);
+
+user.nombre = "Paloma"
+
+console.log(user);
+
+console.log(Object.isSealed(user));
+
+
+// unir dos arreglos
+
+const resultado = {...producto, ...user};
+
+console.log(resultado)
+
+// Object constructor
+function Auto(nombre, precio) {
+    this.nombre = nombre;
+    this.precio = precio;
+}
+
+const mazda = new Auto('cx5', 399000);
+console.log(mazda);
+
+// Retornar key del objeto
+
+keys = Object.keys(mazda);
+console.log(keys)
+
+// Retornar los valores
+values = Object.values(mazda);
+console.log(values);
+
+// Array con par de llave y valor
+entradas = Object.entries(mazda);
+console.log(entradas);
 
